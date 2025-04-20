@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Word Arithmetic Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    </head>
+<body>
+
+    <div class="app-container">
+        <div class="toolbar">
+            <h1>Target Word Arithmetic</h1>
+        </div>
+        <div class="sidebar">
+            <h2>Games</h2>
+            <ul>
+                <li><a href="#" id="word-arithmetic-link">Word Arithmetic</a></li>
+                </ul>
+            <hr>
+             <div id="debug-controls" style="margin-top: 20px;">
+                <h3>Debug Tools</h3>
+                <button id="reset-button">Request Game Reset</button>
+                <p style="font-size: 0.7em;">(Only works if server allows)</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="game-area">
+                <section id="game-info">
+                    <h2>Info</h2>
+                    <p><strong>Status:</strong> <span id="status-message">Initializing...</span></p>
+                    <p><strong>Your Role:</strong> <span id="player-role">---</span></p>
+                    <p id="error-display" class="error-message"></p>
+                </section>
+
+                <section id="target-word-section">
+                    <h2>Target Word</h2>
+                    <div id="target-word-display" style="font-size: 1.5em; font-weight: bold; margin: 10px 0; color: #03045e;">
+                        ---
+                    </div>
+                </section>
+
+                 <section id="input-section">
+                      <h2>Your Expression</h2>
+                      <div id="expression-input-container">
+                            <input type="text" id="expression-input" placeholder="e.g., king - man + woman" maxlength="100" autocomplete="off" disabled>
+                            <button id="submit-expression-button" disabled>Submit Expression</button>
+                      </div>
+                      <p style="font-size: 0.8em; color: #555;">(Calculate a vector close to the target word)</p>
+                 </section>
+
+                 <section id="submissions-section">
+                      <h2>Submissions</h2>
+                      <div id="submissions-area">
+                           <p>(Waiting for players to submit...)</p>
+                      </div>
+                 </section>
+
+                 <section id="results-section" style="margin-top: 20px;">
+                      <h2>Results</h2>
+                      <div id="final-results">
+                           <p>(Results will appear here after the round ends)</p>
+                      </div>
+                 </section>
+
+                 </div> </div> </div> <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+</body>
+</html>

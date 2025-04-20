@@ -1,0 +1,239 @@
+/* public/style.css (Updated for Target Word Game UI) */
+
+/* Basic Reset & Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #343a40; /* Dark grey text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+header, main, footer {
+    width: 100%;
+    max-width: 700px; /* Limit width for readability */
+    margin-bottom: 15px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0077b6; /* Nice blue color */
+}
+
+header h1 {
+    font-weight: 300; /* Lighter font weight for title */
+}
+
+/* --- Section Styling --- */
+main section {
+    background-color: #ffffff; /* White background for sections */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #023e8a; /* Darker blue */
+    border-bottom: 2px solid #e9ecef; /* Light border under headings */
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+h3 {
+    color: #0077b6;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Info Section (Mostly unchanged) */
+#game-info p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+#game-info strong {
+    color: #495057;
+    display: inline-block;
+    min-width: 90px;
+}
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 1.2em;
+}
+#status-message { font-weight: bold; }
+#player-role { font-weight: bold; color: #0077b6; }
+
+/* --- REMOVED Styles for old Game Area elements --- */
+/* #current-word-display { ... } */
+/* #current-word { ... } */
+/* #last-similarity { ... } */
+/* #input-container { ... } */
+/* #word-input { ... } */
+/* #submit-button { ... } */
+/* #word-history { ... } */
+/* #word-history li { ... } */
+/* .history-player1 { ... } */
+/* .history-player2 { ... } */
+
+/* --- NEW Styles for Target Word Game --- */
+
+/* Target Word Section */
+#target-word-display {
+    font-size: 1.6em; /* Make target word prominent */
+    font-weight: bold;
+    color: #03045e; /* Very dark blue */
+    background-color: #e7f5ff; /* Light blue background */
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px 0;
+    word-wrap: break-word;
+}
+
+/* Expression Input Section */
+#expression-input-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+#expression-input { /* Styles for the new input */
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+#submit-expression-button { /* Styles for the new button */
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #0077b6; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    white-space: nowrap; /* Prevent button text wrapping */
+}
+#submit-expression-button:hover {
+    background-color: #023e8a;
+}
+#submit-expression-button:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+/* Submissions Area */
+#submissions-area {
+    margin-top: 15px;
+    min-height: 50px; /* Ensure space */
+    padding: 10px;
+    background-color: #f8f9fa; /* Slightly different background */
+    border: 1px dashed #dee2e6;
+    border-radius: 4px;
+}
+#submissions-area h4 {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+#submissions-area p {
+    font-size: 0.9em;
+    color: #343a40;
+    margin-bottom: 4px;
+}
+
+/* Final Results Area */
+#final-results {
+    margin-top: 15px;
+    min-height: 60px;
+    padding: 15px;
+    background-color: #e0fbfc; /* Light cyan, similar to old word display */
+    border: 1px solid #caf0f8;
+    border-radius: 5px;
+}
+#final-results h3 {
+     margin-bottom: 10px;
+     color: #03045e;
+}
+#final-results p {
+    margin-bottom: 5px;
+}
+#final-results ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+#final-results li {
+    padding: 5px 0;
+    font-size: 0.95em;
+    border-bottom: 1px dotted #adb5bd;
+}
+#final-results li:last-child {
+    border-bottom: none;
+}
+
+
+/* Debug Section (Unchanged) */
+#debug-controls {
+    /* If moved to sidebar, specific positioning might be needed */
+    /* background-color: #fff3cd; */ /* Already styled if in sidebar */
+    /* border: 1px solid #ffeeba; */
+}
+#debug-controls button {
+    background-color: #ffc107;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #343a40;
+}
+#debug-controls button:hover {
+    background-color: #e0a800;
+}
+
+
+/* Footer (Unchanged) */
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.85em;
+    color: #6c757d;
+}
+
+/* Media Query (Adapted for new elements) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    main section {
+        padding: 15px;
+    }
+    #expression-input-container { /* Updated ID */
+        flex-direction: column;
+        gap: 10px;
+    }
+    #submit-expression-button { /* Updated ID */
+        width: 100%;
+    }
+    #target-word-display { /* Updated ID */
+        font-size: 1.4em;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+}
