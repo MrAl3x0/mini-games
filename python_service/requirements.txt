@@ -1,0 +1,10 @@
+# requirements.txt
+Flask
+Flask-Cors
+numpy
+openai
+plotly
+scikit-learn
+requests # Good practice, though not directly used in this snippet
+python-dotenv # To load OPENAI_API_KEY from .env if needed by service
+gunicorn
